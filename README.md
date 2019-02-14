@@ -1,7 +1,6 @@
 # Databases-Assignment_3
 
 ## Queries & Output
----
 
 **1. How many Twitter users are in the database?**
 
