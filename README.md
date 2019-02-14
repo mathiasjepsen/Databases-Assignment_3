@@ -8,8 +8,10 @@
 ```
 db.tweets.distinct("user").length
 ```
-
-> 659774
+---
+```
+659774
+```
 
 **2. Which Twitter users link the most to other Twitter users? (Provide the top ten.)**
 
