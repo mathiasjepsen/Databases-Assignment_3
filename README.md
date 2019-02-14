@@ -1,11 +1,9 @@
 # Databases-Assignment_3
 
-## 1. Twitter Data
-
-### Queries & Output
+## Queries & Output
 ---
 
-**How many Twitter users are in the database?**
+**1. How many Twitter users are in the database?**
 
 ```
 db.tweets.distinct("user").length
@@ -13,7 +11,7 @@ db.tweets.distinct("user").length
 
 > 659774
 
-**Which Twitter users link the most to other Twitter users? (Provide the top ten.)**
+**2. Which Twitter users link the most to other Twitter users? (Provide the top ten.)**
 
 ```
 db.tweets.aggregate([
@@ -47,7 +45,7 @@ keza34          — 211
 TraceyHewins    — 202
 ```
 
-**Who are the most mentioned Twitter users? (Provide the top five.)**
+**3. Who are the most mentioned Twitter users? (Provide the top five.)**
 
 ```
 db.tweets.aggregate([
