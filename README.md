@@ -2,7 +2,7 @@
 
 ## 1. Twitter Data
 
-### Queries & Output
+## Queries & Output
 
 **How many Twitter users are in the database?**
 
