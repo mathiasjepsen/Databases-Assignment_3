@@ -33,8 +33,8 @@ db.tweets.aggregate([
 ])
 ```
 > { "_id" : "lost_dog", "count" : 549 }
-{ "_id" : "tweetpet", "count" : 310 }
-{ "_id" : "VioletsCRUK", "count" : 251 }
+> { "_id" : "tweetpet", "count" : 310 }
+> { "_id" : "VioletsCRUK", "count" : 251 }
 { "_id" : "what_bugs_u", "count" : 246 }
 { "_id" : "tsarnick", "count" : 245 }
 { "_id" : "SallytheShizzle", "count" : 229 }
