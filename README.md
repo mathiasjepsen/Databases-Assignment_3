@@ -32,13 +32,54 @@ db.tweets.aggregate([
   { $limit: 10 }
 ])
 ```
-> { "_id" : "lost_dog", "count" : 549 }
-> { "_id" : "tweetpet", "count" : 310 }
-> { "_id" : "VioletsCRUK", "count" : 251 }
-{ "_id" : "what_bugs_u", "count" : 246 }
-{ "_id" : "tsarnick", "count" : 245 }
-{ "_id" : "SallytheShizzle", "count" : 229 }
-{ "_id" : "mcraddictal", "count" : 217 }
-{ "_id" : "Karen230683", "count" : 216 }
-{ "_id" : "keza34", "count" : 211 }
-{ "_id" : "TraceyHewins", "count" : 202 }
+---
+```
+lost_dog        — 549
+tweetpet        — 310
+VioletsCRUK     — 251
+what_bugs_u     — 246
+tsarnick        — 245
+SallytheShizzle — 229
+mcraddictal     — 217
+Karen230683     — 216
+keza34          — 211
+TraceyHewins    — 202
+```
+
+**Who are the most mentioned Twitter users? (Provide the top five.)**
+
+```
+db.tweets.aggregate([
+  { $match: 
+    { text: 
+      { $regex: /@\w+/ }
+    }
+  }, 
+  { $project: 
+    { mentionedName: 
+      { $split: ["$text", " "] }
+    }
+  }, 
+  { $unwind: "$mentionedName" }, 
+  { $match: 
+    { mentionedName: 
+      { $regex: /@\w+/} 
+    }
+  }, 
+  { $group: 
+    { _id: "$mentionedName", 
+      count: { $sum: 1 }
+    }
+  }, 
+  { $sort: 
+    { count: -1 }
+  }, 
+  { $limit: 5 }
+])
+---
+```
+@mileycyrus    — 4310
+@tommcfly      — 3837
+@ddlovato      — 3349
+@Jonasbrothers — 1263
+@DavidArchie   — 1222
